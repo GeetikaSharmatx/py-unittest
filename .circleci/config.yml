@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: ./manage.py test
+          command: python test_multiples.py
           name: Test
 
 workflows:
