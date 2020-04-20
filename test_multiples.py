@@ -1,5 +1,6 @@
 import unittest
 import mathFunctions
+import xmlrunner
 
 class TestMathFunctions(unittest.TestCase):
     def test_multiples(self):
@@ -33,4 +34,6 @@ class TestMathFunctions(unittest.TestCase):
             mathFunctions.division(5,0)
 
 if __name__ == '__main__':
-    unittest.main()
+    with open('test-reports/results.xml', 'wb') as output:
+        unittest.main(testRunner=xmlrunner.XMLTestRunner(output=output),
+            failfast=False, buffer=False, catchbreak=False)
